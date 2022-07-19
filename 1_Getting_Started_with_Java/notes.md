@@ -48,3 +48,12 @@ An IDE is a software we can use to build and run Java programs.
 - Has a GUI 
 - Contains built-in tools to make the development process faster
 
+# Hello World in an IDE
+
+Create our first Hello World in IntelliJ IDEA
+
+This IDE: 
+- Contains a code editor
+- Contains a debugger 
+- Contains a compiler
+- Contains other features that make developing code easier
