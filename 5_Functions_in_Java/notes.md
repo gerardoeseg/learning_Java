@@ -253,7 +253,7 @@ public class Main {
         }
 
         double earnings = hoursPerWeek * moneyPerHour;
-        double unpaidTime = vacationDays * moneyPerHour * 8; // One day has one hour
+        double unpaidTime = vacationDays * moneyPerHour * 8; // One day has eight hour
         return ((earnings/7)*365) - unpaidTime;
     }
 

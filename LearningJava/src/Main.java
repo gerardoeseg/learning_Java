@@ -2,28 +2,33 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static double salaryCalculator(double hoursPerWeek, double moneyPerHour, int vacationDays){
+        if (hoursPerWeek < 0){
+            return -1;
+        }
+        if (moneyPerHour < 0){
+            return -1;
+        }
+
+        double earnings = hoursPerWeek * moneyPerHour;
+        double unpaidTime = vacationDays * moneyPerHour * 8; // One day has one hour
+        return ((earnings/7)*365) - unpaidTime;
+    }
+
     public static void main(String[] args) {
 
-        System.out.println("Let's calculate the area of a triangle");
-
+        System.out.println("Hours per week:");
         Scanner input = new Scanner(System.in);
+        double hours = input.nextDouble();
 
-        System.out.println("Please input the base of the triangle (in inches).");
-        double base = input.nextDouble();
+        System.out.println("Money per hour:");
+        double money = input.nextDouble();
 
-        while(base <= 0){
-            System.out.println("That's invalid. Please input the base of the triangle (in inches).");
-            base = input.nextDouble();
-        }
+        System.out.println("Vacation days:");
+        int days = input.nextInt();
 
-        System.out.println("Please input the height of the triangle (in inches).");
-        double height = input.nextDouble();
-        while(height <= 0){
-            System.out.println("That's invalid. Please input the height of the triangle (in inches).");
-            height = input.nextDouble();
-        }
+        double salary = salaryCalculator(hours, money, days);
 
-        double area = (base * height)/2;
-        System.out.println("The area is " + area);
+        System.out.println(salary);
     }
 }
