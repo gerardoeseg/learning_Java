@@ -405,5 +405,50 @@ Creating and Using a Student Profile
 - Your program should **create two student profile instances** that represent two different student profiles
 - Your program should call **incrementExpectedGraduationYear** on one of the student profiles and print out their expected graduation year instance value of the console
 
+## Code - StudentProfile class
 
-# Sample solution: Student profile
+```java
+public class StudentProfile {
+
+    // Instance variables, atributes
+    int expectedYearToGraduate;
+    double studentGPA;
+    String studentFirstName;
+    String studentLastName;
+    String declaredMajor;
+
+    // Constructor
+    public StudentProfile(String studentFirstName, String studentLastName,
+                          String declaredMajor, double studentGPA,
+                          int expectedYearToGraduate){
+
+        this.studentFirstName = studentFirstName;
+        this.studentLastName = studentLastName;
+        this.declaredMajor = declaredMajor;
+        this.studentGPA = studentGPA;
+        this.expectedYearToGraduate = expectedYearToGraduate;
+    }
+
+    // Instance methods, behavior
+    public void incrementExpectedGraduationYear() {
+        this.expectedYearToGraduate = this.expectedYearToGraduate + 1;
+    }
+}
+```
+
+
+## Code - Main class
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        StudentProfile profileOne = new StudentProfile("Sally", "Salmon", "Film", 3.75, 2022);
+        StudentProfile profileTwo = new StudentProfile("Max", "Tiffen", "Computer Science", 3.45, 2021);
+
+        profileTwo.incrementExpectedGraduationYear();
+        System.out.println(profileTwo.expectedYearToGraduate);
+    }
+}
+```
